@@ -3,7 +3,7 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    return HttpResponse("hello Puneet!!")
+    return render(request, 'maps/index.html')
 
 def karnataka(request):
-    return HttpResponse("hello Karnataka!!")
+    return render(request, 'maps/maps.html')
