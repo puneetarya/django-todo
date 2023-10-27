@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import folium
-from map import merge_and_validate
+from helper import merge_and_validate
 import os
 import pandas as pd
 import geopandas as gpd
