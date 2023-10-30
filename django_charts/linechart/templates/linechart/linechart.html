@@ -11,12 +11,12 @@
     const ctx = document.getElementById('myChart');
   
     new Chart(ctx, {
-      type: 'bar',
+      type: 'line',
       data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: [{% for item in year %} {{item}}, {% endfor %}],
         datasets: [{
-          label: '# of Votes',
-          data: [12, 19, 3, 5, 2, 3],
+          label: 'Turnout Percentage in Karnataka Election from 1978 to 2023',
+          data: [{% for item in turnout %} {{item}}, {% endfor %}],
           borderWidth: 1
         }]
       },
