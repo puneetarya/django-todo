@@ -26,3 +26,5 @@ def index(request):
 def plot(request):
     return render(request, 'linechart/linechart.html')
 
+def dashboard(request):
+    return render(request, 'linechart/dashboard.html')
