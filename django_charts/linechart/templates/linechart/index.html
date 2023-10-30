@@ -1,8 +1,12 @@
 {% extends "linechart/layout.html" %}
 
 {% block body %}
-<div class="container">
-    <h1>Hello, world!</h1>
-    
-  </div>
+
+  <h1>Upload a file</h1>
+<form method="POST" enctype="multipart/form-data"> 
+{% csrf_token %}
+<input type="file" name="document" id="document", required="required"> 
+<button id="submit" class ="btn btn-primary">Upload</button>
+</form>
+
 {% endblock body %}
