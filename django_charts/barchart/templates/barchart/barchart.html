@@ -3,9 +3,6 @@
 <div class="container">
 
   <div class="row justify-content-start">
-    <div class="col-4">
-      One of two columns
-    </div>
     <div class="col-md-8">
       <div>
         <canvas id="myChart" width="400" height="200"></canvas>
@@ -19,10 +16,10 @@
         new Chart(ctx, {
           type: 'bar',
           data: {
-            labels: [{% for item in data %} '{{item.Year}}', {% endfor %}],
+            labels: [{% for item in year %} {{item}}, {% endfor %}],
             datasets: [{
-              label: '# of Total Candidates',
-              data: [{% for item in data %} {{item.Total_Candidate}} {% endfor %}],
+              label: 'Total Candidates Contested in Karnataka Election from 1978 to 2023',
+              data: [{% for item in total_candidate %} {{item}}, {% endfor %}],
               borderWidth: 1
             }]
           },
