@@ -6,4 +6,5 @@
 2. airline
 3. django_maps
 4. django_charts
+5. django_crud
    
