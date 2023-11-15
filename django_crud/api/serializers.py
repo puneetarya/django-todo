@@ -1,8 +1,13 @@
 from rest_framework import serializers
 from .models import Student
 
+def start_with_r(value):
+    if value[0].lower() != 'r':
+        raise serializers.ValidationError('Name should start with r')
+    
+
 class StudentSerializer(serializers.Serializer):
-    name = serializers.CharField(max_length=100)
+    name = serializers.CharField(max_length=100, validators=[start_with_r])
     roll = serializers.IntegerField()
     city = serializers.CharField(max_length=100)
 
