@@ -21,8 +21,17 @@ class StudentSerializer(serializers.Serializer):
         return instance
     
     # field level validation
-
+    
     def validate_roll(self, value):
         if value >=200:
             raise serializers.ValidationError('Seat Full')
         return value
+    
+
+    # object level validation
+    def validate(self, data):
+        nm = data.get('name')
+        ct = data.get('city')
+        if nm.lower() == 'rohit' and ct.lower() != 'hisar':
+            raise serializers.ValidationError('City must be hisar for rohit')
+        return data
